@@ -22,9 +22,17 @@ app.post("/courier", async (req, res) => {
 			.status(400)
 			.json({ success: false, message: '"otp" is required in body.' });
 
-	const status = await sendMail(email, otp);
-	console.log(status);
-	res.json({ success: true, message: "Valid data", status });
+	try {
+		const status = await sendMail(email, otp);
+		console.log(status);
+		res.json({ success: true, message: "Valid data", status });
+	} catch (err) {
+		return res.status(500).json({
+			success: false,
+			message: "Unexpected error",
+			error: err.message,
+		});
+	}
 });
 
 const PORT = process.env.PORT || 7500;
