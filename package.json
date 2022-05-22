@@ -1,0 +1,23 @@
+{
+	"name": "mail-demo",
+	"version": "1.0.0",
+	"description": "POC for testing various mail stategies",
+	"main": "index.js",
+	"scripts": {
+		"start": "node ./app.js",
+		"start-watch": "nodemon ./app.js"
+	},
+	"keywords": [
+		"email"
+	],
+	"author": "Chetan Bohra <chetanbohra26@gmail.com>",
+	"license": "ISC",
+	"dependencies": {
+		"@trycourier/courier": "^3.12.0",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.16"
+	}
+}
